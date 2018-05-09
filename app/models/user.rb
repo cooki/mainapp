@@ -8,20 +8,18 @@ class User < ApplicationRecord
   validates :fullname, presence: true, length: {maximum: 50}    
 
   def self.from_omniauth(auth)
-  	user = User.Where(email: auth.info.email).first
+  	    user = User.where(email: auth.info.email).first
 
-  	if user
-  	  return user
-  	else
-  	  where(provide: auth.provider, uid: auth.uid).first_or_create do |user|
-  	  	user.fullname = user.name
-  	  	user.provider = auth.provider
+  	    where(provide: auth.provide, uid: auth.uid).first_or_initialize.tap do |user|
+  	  	user.fullname = auth.info.name
+  	  	user.provide = auth.provide
   	  	user.uid = auth.uid
   	  	user.email = auth.info.email
   	  	user.image = auth.info.image
   	  	user.password = Devise.friendly_token[0,20]
+        user.save
   	  end  	
-  	end
+
   end
 
 end
