@@ -1,3 +1,3 @@
-# Rails app for streaming
+# Rails app for Find Chip accommodation
 
 
