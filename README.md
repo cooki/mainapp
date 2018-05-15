@@ -1,3 +1,3 @@
-# Rails app for Find Chip accommodation
+# Rails app for Find Cheap accommodation
 
 

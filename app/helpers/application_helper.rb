@@ -9,7 +9,7 @@ module ApplicationHelper
 		end
 
 		if user.image
-			user.image
+			@link
 		elsif gravatar_error_code != 200
 			@link = '' # no images have been found via gravatar
 		else

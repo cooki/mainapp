@@ -107,13 +107,13 @@
 						<div class="form-group">
 							<span class="btn btn-default btn-file">
 								<i class="fas fa-cloud-upload-alt"></i> Upload Photos
-								<%= file_field_tag "images[]", type: :file , multiple: true %>
+								<%= file_field_tag "images[]", type: :file , multiple: true , accept: 'image/jpeg' %>
 							</span>
 						</div>
 					</div>
 				</div>
 
-				<div class="photos">
+				<div id="photos">
 					<%= render 'photos/list' %>
 				</div>
 

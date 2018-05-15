@@ -25,6 +25,8 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-github'
 gem 'paperclip'
+gem 'geocoder'
+gem 'jquery-ui-rails'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
